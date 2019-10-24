@@ -18,3 +18,5 @@
 3. Check that dependency is there by opening the maven sidebar in IntelliJ and opening the dependencies folder; hit the refresh icon to re-import
 
 4. Add chromedriver executable to the project. Put in a 'resources' folder.
+
+### Chapter 2 - Webdriver
