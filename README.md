@@ -29,3 +29,22 @@
     3. Tell webdriver where it can find chromedriver (there are other ways to do this, yes?)
     4. Instantiate driver as a chrome driver; the one we're using is an interface, we're using it as a type
 - To change browser window size
+
+### Chapter 4.1
+
+- Two layers of test automation projects: framework layer, test layer
+- Under src folder there is main and test
+- Main:
+    - Where you put your framework
+    - All interactions with web browser should be here
+    - Finding and clicking on elements
+- Test:
+    - Where you typically put your test
+    - Focus on the test itself
+    - Checking whether something was successful
+- Page object model design pattern:
+    - Create a class in the framework that represents a page in your application
+    - New class for new pages
+    - Convention to have "page" in your class
+    - In the page object, fields that represent elements on a page and methods to interact with them
+    - Only create what you need at the time

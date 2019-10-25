@@ -4,12 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.HomePage;
 
 import java.util.List;
 
 public class BaseTests {
 
     private WebDriver driver;
+
+    protected HomePage homePage;
 
     public void setUp() {
 
@@ -26,26 +29,32 @@ public class BaseTests {
         // maximize window
         driver.manage().window().maximize();
 
-        // fullscreen:
-        // driver.manage().window().fullscreen();
-
-        // specific size:
-        // driver.manage().window().setSize(new Dimension(375, 812));
-
-        WebElement shiftingContent = driver.findElement(By.linkText("Shifting Content"));
-        shiftingContent.click();
-
-        WebElement exampleOne = driver.findElement(By.linkText("Example 1: Menu Element"));
-        exampleOne.click();
-
-        List<WebElement> menuOptions = driver.findElements(By.tagName("li"));
-        System.out.println(menuOptions.size());
+        homePage = new HomePage(driver);
 
         // confirm success
         // System.out.println(driver.getTitle());
 
         // close browser when finished
         driver.quit();
+
+        // fullscreen:
+        // driver.manage().window().fullscreen();
+
+        // specific size:
+        // driver.manage().window().setSize(new Dimension(375, 812));
+
+        /*
+         * Remove interactions from test - that stuff belongs in the framework, but isn't needed here
+         */
+//        WebElement shiftingContent = driver.findElement(By.linkText("Shifting Content"));
+//        shiftingContent.click();
+//
+//        WebElement exampleOne = driver.findElement(By.linkText("Example 1: Menu Element"));
+//        exampleOne.click();
+//
+//        List<WebElement> menuOptions = driver.findElements(By.tagName("li"));
+//        System.out.println(menuOptions.size());
+
     }
 
     public static void main(String[] args) {
