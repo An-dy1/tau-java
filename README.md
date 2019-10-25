@@ -20,3 +20,12 @@
 4. Add chromedriver executable to the project. Put in a 'resources' folder.
 
 ### Chapter 2 - Webdriver
+
+- To ask: what's up with main vs test directory?
+- Put tests inside a package
+- Once you have your Test Class:
+    1. Create a webdriver object
+    2. Create a method
+    3. Tell webdriver where it can find chromedriver (there are other ways to do this, yes?)
+    4. Instantiate driver as a chrome driver; the one we're using is an interface, we're using it as a type
+- To change browser window size
