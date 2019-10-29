@@ -48,3 +48,14 @@
     - Convention to have "page" in your class
     - In the page object, fields that represent elements on a page and methods to interact with them
     - Only create what you need at the time
+    
+### Ch. 4.2
+
+- Start method names with "test" like "testSuccessfulLogin"
+- Test classes inherit from BaseTests class; takes care of setup and we don't want to repeat
+- SELENIUM WEBDRIVER is not a testing/verification tool, it is used to automate the actions you take on a webpage
+- Must add an assertion tool to run Selenium projects as a test
+- TestNG is an ASSERTION LIBRARY
+- And an ANNOTATION library? 
+- Add to pom.xml
+- Means you don't need a psvm - testng knows what to run based on annotations
