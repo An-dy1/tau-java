@@ -59,3 +59,8 @@
 - And an ANNOTATION library? 
 - Add to pom.xml
 - Means you don't need a psvm - testng knows what to run based on annotations
+
+### Ch. 4.3
+
+- Dropdowns aren't webelements, they're their own special class
+- Need another Selenium dependency in the pom to interact with dropdowns (contains "select" class)

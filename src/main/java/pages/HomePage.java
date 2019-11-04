@@ -13,14 +13,22 @@ public class HomePage {
         this.driver = driver;
     }
 
-    // private because: encapsulation
-    private By formAuthenticationLink = By.linkText("Form Authentication");
-
     // because this opens a new page: it is custom that if your action changes the page, then you should return a handle to that new page
     // in this case, return a login page object
     public LoginPage clickFormAuth() {
-        driver.findElement(formAuthenticationLink).click();
+        // if this text needed to be called by two different methods, would remove this hard-coded text into a variable
+        clickLink("Form Authentication");
         // every page needs a driver
         return new LoginPage(driver);
+    }
+
+    public DropdownPage clickDropdownLink() {
+        clickLink("Dropdown");
+        return new DropdownPage(driver);
+    }
+
+    // private because: encapsulation
+    private void clickLink(String linkText) {
+        driver.findElement(By.linkText(linkText)).click();
     }
 }
