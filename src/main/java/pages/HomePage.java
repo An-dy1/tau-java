@@ -27,6 +27,11 @@ public class HomePage {
         return new DropdownPage(driver);
     }
 
+    public HoversPage clickHoverLink() {
+        clickLink("Hovers");
+        return new HoversPage(driver);
+    }
+
     // private because: encapsulation
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();

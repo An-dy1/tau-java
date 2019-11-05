@@ -64,3 +64,9 @@
 
 - Dropdowns aren't webelements, they're their own special class
 - Need another Selenium dependency in the pom to interact with dropdowns (contains "select" class)
+
+### Ch. 5
+
+- Don't return web elements to your test class
+- Actions follow builder pattern - need to .perform()
+- Added an inner class?
