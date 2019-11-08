@@ -32,6 +32,18 @@ public class HomePage {
         return new HoversPage(driver);
     }
 
+    public KeyPressesPage clickKeyPresses() {
+        clickLink("Key Presses");
+        return new KeyPressesPage(driver);
+    }
+
+    public AlertsPage getClickAlertsLink() {
+        clickLink("JavaScript Alerts");
+        return new AlertsPage(driver);
+    }
+
+    Page clickAlertsLink
+
     // private because: encapsulation
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();

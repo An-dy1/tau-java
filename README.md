@@ -70,3 +70,6 @@
 - Don't return web elements to your test class
 - Actions follow builder pattern - need to .perform()
 - Added an inner class?
+
+### Ch. 6
+
