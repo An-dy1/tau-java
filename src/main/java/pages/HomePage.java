@@ -41,9 +41,6 @@ public class HomePage {
         clickLink("JavaScript Alerts");
         return new AlertsPage(driver);
     }
-
-    Page clickAlertsLink
-
     // private because: encapsulation
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();

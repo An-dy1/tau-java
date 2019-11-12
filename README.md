@@ -71,5 +71,9 @@
 - Actions follow builder pattern - need to .perform()
 - Added an inner class?
 
-### Ch. 6
+### Ch. 7.1
 
+- To interact with an alert: driver.switchTo().alert()...
+- In BaseTest, add a @BeforeMethod to make sure that before you run an @Test, you're on the home page
+
+### Ch. 7.2

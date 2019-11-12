@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
 import java.util.List;
@@ -26,10 +27,7 @@ public class BaseTests {
 
         // instantiate webdriver object
         driver = new ChromeDriver();
-
-        // getting url launches browser
-        driver.get("https://the-internet.herokuapp.com/");
-
+        goHome();
         // maximize window
         driver.manage().window().maximize();
         // fullscreen:
@@ -43,7 +41,12 @@ public class BaseTests {
          * Remove interactions from test - that stuff belongs in the framework, but isn't needed here
          * Anything like .click()
          */
+    }
 
+    @BeforeMethod
+    public void goHome() {
+        // getting url launches browser
+        driver.get("https://the-internet.herokuapp.com/");
     }
 
     @AfterClass
