@@ -77,3 +77,10 @@
 - In BaseTest, add a @BeforeMethod to make sure that before you run an @Test, you're on the home page
 
 ### Ch. 7.2
+
+- To upload a file, you pass the absolute path of the file to the form, bypassing the system operation
+
+### Ch 7.3
+
+- Modals appear in the DOM, unlike alerts, so we can interact with them normally
+- NOTE: When a modal is visible, you cannot interact with anything on the page besides it. Attempting to do so with WebDriver will cause an exception

@@ -14,7 +14,6 @@ import java.util.List;
 public class BaseTests {
 
     private WebDriver driver;
-
     // protected so that tests that inherit from this class will have access to the home page (not sure how that works?)
     protected HomePage homePage;
 

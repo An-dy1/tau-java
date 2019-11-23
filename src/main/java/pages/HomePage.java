@@ -41,6 +41,11 @@ public class HomePage {
         clickLink("JavaScript Alerts");
         return new AlertsPage(driver);
     }
+
+    public UploadPage clickUploadLink() {
+        clickLink("File Upload");
+        return new UploadPage(driver);
+    }
     // private because: encapsulation
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
