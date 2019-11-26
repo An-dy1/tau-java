@@ -46,6 +46,11 @@ public class HomePage {
         clickLink("File Upload");
         return new UploadPage(driver);
     }
+
+    public WysiwygPage clickWysiwygLink() {
+        clickLink("WYSIWYG Editor");
+        return new WysiwygPage(driver);
+    }
     // private because: encapsulation
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();

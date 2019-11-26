@@ -84,3 +84,13 @@
 
 - Modals appear in the DOM, unlike alerts, so we can interact with them normally
 - NOTE: When a modal is visible, you cannot interact with anything on the page besides it. Attempting to do so with WebDriver will cause an exception
+
+### Ch. 8 - Frames
+
+- A frame is an HTML document within an HTML document
+- Tests should only worry about what a user should have to worry about (more or less); for example, a user/test doesn't need to know that a field is inside an iframe
+- Once in the iFrame, the only things you can access
+- Best practice to then exit the iFrame after doing whatever you need to
+
+### Ch. 9 - Wait strategies
+
