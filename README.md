@@ -94,3 +94,11 @@
 
 ### Ch. 9 - Wait strategies
 
+- Implicit wait - wait until a certain amount of time unless it finds the element it needs to work with next
+```java
+driver.manage().timeouts().implicitlyWait(<timeToWait>, <UnitOfTime>);
+```
+- Be careful with implicit waits: at the project level and could slow down a project
+- Or, explicit waits
+- After you perform an action that then creates a situation where something is loading or hidden, you can manage your wait in that method;
+that way, the test methods don't have to worry about calling a method to wait

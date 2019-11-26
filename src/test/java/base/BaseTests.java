@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTests {
 
@@ -33,7 +34,7 @@ public class BaseTests {
         // driver.manage().window().fullscreen();
         // specific size:
         // driver.manage().window().setSize(new Dimension(375, 812));
-
+//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         homePage = new HomePage(driver);
 
         /*

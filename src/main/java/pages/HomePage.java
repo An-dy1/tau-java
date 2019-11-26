@@ -51,6 +51,11 @@ public class HomePage {
         clickLink("WYSIWYG Editor");
         return new WysiwygPage(driver);
     }
+
+    public DynamicLoadingPage clickDynamicPage() {
+        clickLink("Dynamic Loading");
+        return new DynamicLoadingPage(driver);
+    }
     // private because: encapsulation
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
