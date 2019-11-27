@@ -107,3 +107,9 @@ that way, the test methods don't have to worry about calling a method to wait
 wait.until(ExpectedConditions)
 ```
 - There are also fluent waits, which allow you to tell it how often to poll and also any exceptions to ignore
+
+### Ch. 10 - JavaScript executor
+
+- All major web browsers have dedicated js engines
+- Anything we can't do with webdriver, we can write Javascript to do
+- Example: scroll a page
