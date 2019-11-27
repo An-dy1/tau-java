@@ -30,17 +30,9 @@ public class BaseTests {
         goHome();
         // maximize window
         driver.manage().window().maximize();
-        // fullscreen:
-        // driver.manage().window().fullscreen();
-        // specific size:
-        // driver.manage().window().setSize(new Dimension(375, 812));
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         homePage = new HomePage(driver);
 
-        /*
-         * Remove interactions from test - that stuff belongs in the framework, but isn't needed here
-         * Anything like .click()
-         */
     }
 
     @BeforeMethod

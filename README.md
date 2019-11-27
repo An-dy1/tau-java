@@ -102,3 +102,8 @@ driver.manage().timeouts().implicitlyWait(<timeToWait>, <UnitOfTime>);
 - Or, explicit waits
 - After you perform an action that then creates a situation where something is loading or hidden, you can manage your wait in that method;
 that way, the test methods don't have to worry about calling a method to wait
+- After you instantiate a wait, then you have to:
+```java
+wait.until(ExpectedConditions)
+```
+- There are also fluent waits, which allow you to tell it how often to poll and also any exceptions to ignore
