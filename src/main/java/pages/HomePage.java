@@ -62,6 +62,11 @@ public class HomePage {
         return new LargeAndDeepDomPage(driver);
     }
 
+    public InfiniteScrollPage clickInfiniteScroll() {
+        clickLink("Infinite Scroll");
+        return new InfiniteScrollPage(driver);
+    }
+
     // private because: encapsulation
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
