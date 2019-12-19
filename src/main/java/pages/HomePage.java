@@ -67,6 +67,10 @@ public class HomePage {
         return new InfiniteScrollPage(driver);
     }
 
+    public NewWindowPage clickNewWindowPage() {
+        clickLink("Multiple Windows");
+        return new NewWindowPage(driver);
+    }
     // private because: encapsulation
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
