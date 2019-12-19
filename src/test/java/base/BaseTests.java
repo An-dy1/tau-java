@@ -1,18 +1,23 @@
 package base;
 
 import com.google.common.io.Files;
+import jdk.jfr.Event;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
+import utils.EventReporter;
 import utils.WindowManager;
 
 import javax.imageio.IIOException;
@@ -23,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTests {
 
-    private WebDriver driver;
+    private EventFiringWebDriver driver;
     // protected so that tests that inherit from this class will have access to the home page (not sure how that works?)
     protected HomePage homePage;
 
@@ -35,13 +40,14 @@ public class BaseTests {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver-78");
 
         // instantiate webdriver object
-        driver = new ChromeDriver();
+        driver = new EventFiringWebDriver(new ChromeDriver(getChromeOptions()));
+        driver.register(new EventReporter());
         goHome();
         // maximize window
         driver.manage().window().maximize();
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         homePage = new HomePage(driver);
-
+        setCookies();
     }
 
     @BeforeMethod
@@ -69,6 +75,19 @@ public class BaseTests {
                 e.printStackTrace();
             }
         }
+    }
+
+    private ChromeOptions getChromeOptions() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("disable-infobars");
+//        options.setHeadless(true);
+        return options;
+    }
+
+    private void setCookies() {
+        Cookie cookie = new Cookie.Builder("TAU", "ABC")
+                .domain("http://the-internet.herokuapp.com/").build();
+        driver.manage().addCookie(cookie);
     }
 
     public WindowManager getWindowManager() {
